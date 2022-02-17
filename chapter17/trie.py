@@ -12,7 +12,7 @@ class Trie:
         for char in word:
             if current_node.children.get(char):
                 # follow the child node
-                current_node = currentNode.children[char]
+                current_node = current_node.children[char]
             else:
                 # insert new node
                 new_node = Node()
@@ -38,11 +38,22 @@ class Trie:
                 return None
         return current_node
 
+    # Page 320 example
+    def collect_all_words(self, node=None, word="", words=[]):
+        current_node = node or self.root
+        # traverse trie
+        for key, child_node in current_node.children.items():
+            if key == '*':
+                words.append(word)
+            else:
+                self.collect_all_words(child_node, word + key, words)
+        return words
+
 
 trie = Trie()
 trie.insert('ace')
 trie.insert('bad')
 trie.insert('cat')
 
-print('search bad:', trie.search('bad'))
-print('search bat:', trie.search('bat'))
+# print('search bad:', trie.search('bad'))
+# print('search bat:', trie.search('bat'))
