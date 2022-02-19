@@ -45,5 +45,5 @@ bob.add_adjacent_vertex(helen)
 derek.add_adjacent_vertex(gina)
 derek.add_adjacent_vertex(irena)
 
-# execute depth first search
+# execute breadth first search
 bfs_traverse(alice)
