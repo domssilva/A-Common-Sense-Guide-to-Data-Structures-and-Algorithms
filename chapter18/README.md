@@ -8,7 +8,7 @@
 
 ## Representing graphs
 
-The most popular and convenient representation of a graph, whether directed or undirected, weighted or unweighted, is an adjacency matrix.
+The most popular and convenient representation of a graph, whether directed or undirected, weighted or unweighted, is the adjacency list.
 
 * adjacency matrix
     * lookup is O(1)
@@ -19,3 +19,10 @@ The most popular and convenient representation of a graph, whether directed or u
 * edge list
     * efficient edge iteration
     * edge weight lookup O(E)
+
+The adjacency list is a "hybrid" between an adjacency matrix and an edge list.
+There are different ways of actually implementing the adjacency list
+
+* hash table: associates each vertex with an array of adjacent vertices
+* singly linked list: each vertex points to a linked list of the neighboring vertices
+* object oriented approach: each Vertex is an object containing a list of references of the neighboring vertices
